@@ -5,4 +5,4 @@ function createResult(error, data) {
     return { status: 'error', error }
 }
 
-module.exports = createResult
+module.exports = {createResult}

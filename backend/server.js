@@ -2,12 +2,12 @@ const express = require('express')
 const cors = require('cors')
 
 const userRouter = require('./routes/users')
-const foodRouter = require('./routes/fav-quote')
-const orderRouter = require('./routes/quotes')
+// const foodRouter = require('./routes/fav-quote')
+const qouteRouter = require('./routes/quotes')
 
-const errorHandler = require('./utils/errhandler')
+//const errorHandler = require('./utils/errhandler')
 
-const auth = require('./utils/auth')
+//const auth = require('./utils/auth')
 
 const app = express()
 
@@ -15,7 +15,7 @@ const app = express()
 app.use(cors())
 //app.use('/images', express.static('images'))
 app.use(express.json())
-app.use(auth)
+//app.use(auth)
 
 // Testing
 app.get('/', (req, res) => {
@@ -24,11 +24,11 @@ app.get('/', (req, res) => {
 
 // Routes
 app.use('/users', userRouter)
-app.use('/foods', foodRouter)
-app.use('/orders', orderRouter)
+// app.use('/foods', foodRouter)
+app.use('/qoutes', qouteRouter)
 
 // Error handling middleware must be last
-app.use(errorHandler)
+//app.use(errorHandler)
 
 app.listen(4000, 'localhost', () => {
   console.log('Server started at port 4000')
